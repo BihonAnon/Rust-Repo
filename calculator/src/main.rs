@@ -1,8 +1,9 @@
 fn main() {
     println!("Hello, world!");
-    calc();
+    firstName();
 }
 
-fn calc() {
-    println!("calc");
+fn first_name() {
+    let firstName = "John";
+    println!("My name is {}", firstName);
 }
