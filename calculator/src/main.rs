@@ -30,8 +30,12 @@ fn fcc9() {
 The type of first_name is &str
 str is a primitive type, and the ampersand (&) is a reference. indicates the type is a refrence.
 A key aspect of rust is memory use and allocation (ownership)
-another common type is String, since its heap allocated, it means the size can be unkown at complie time (eg, need an imput)
+another common type is String, since its heap allocated, it means the size can be unkown at complie time (dynamic)
 */
     let example = String::from("Hello, Campers!");
+    let name = example;
+    //fcc10, This some werid engagement. I would call this a poin^er but im pretty confused.
+    //NEVER MIND: IF VARIABLE IS MOVED IN MEMORY, YOU CANT ACCESS IT ANYMORE. THIS MAKES SO MUCH SENSE
+    println!("{}", name);
     println!("{}", example);
 }
