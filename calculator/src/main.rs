@@ -1,14 +1,15 @@
 fn main() {
     println!("Hello, world!");
-    first_name();
+    fcc8();
+    fcc9();
 }
 
-fn first_name() {
-    //fcc 6
-    let first_name = "John";
-    //fcc 7 string concatenation VVV
-    println!("My name is {}", first_name);
-}
+// fn first_name() {
+//     //fcc 6
+//     let first_name = "John";
+//     //fcc 7 string concatenation VVV
+//     println!("My name is {}", first_name);
+// }
 fn fcc8() {
     //fcc 8
     /*
@@ -21,5 +22,16 @@ fn fcc8() {
     let first_name = "John";
     let last_name = "Doe";
     println!("My name is {} {}", first_name, last_name);
+}
 
+fn fcc9() {
+    //fcc 9
+/*
+The type of first_name is &str
+str is a primitive type, and the ampersand (&) is a reference. indicates the type is a refrence.
+A key aspect of rust is memory use and allocation (ownership)
+another common type is String, since its heap allocated, it means the size can be unkown at complie time (eg, need an imput)
+*/
+    let example = String::from("Hello, Campers!");
+    println!("{}", example);
 }
