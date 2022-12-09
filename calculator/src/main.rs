@@ -1,15 +1,20 @@
-#[cfg(test)] //fcc26 (test functions are important guys)
-mod tests {
-    #[test]
-    fn main_exists() {
-      assert_eq!(main(), ());
-    }
-}
+use std::io;
 
 fn main() {
+    //fcc28 asks us to do some bad stuff, (take varibles directly to the main function), on the online version i guess it doesnt matter cuz thers already a main function running in the background
+    //this is rusts suggested way of collecting user input. (i think)
     println!("Hello, world!");
-    println!("{}", fcc26());
-}
+    println!("Calculator! Input your simple eq (ex. 1 + 1)");
+    let mut user_input = String::new();
+    let stdin = io::stdin();
+    stdin.read_line(&mut user_input).expect("Failed to read line");
+    let mut user_input = user_input.split_whitespace(); //THIS FUNCTIONS AWESOME
+    let first_number = user_input.next().unwrap().parse::<f32>().unwrap();
+    let operator = user_input.next().unwrap().chars().next().unwrap();
+    let second_number = user_input.next().unwrap().parse::<f32>().unwrap();
+    fcc28(first_number, operator, second_number);
+    Ok(()); //I dont know what this does, but i think its a code safty thing?
+} 
 
 // fn first_name() {
 //     //fcc 6
@@ -83,7 +88,41 @@ fn main() {
 //     //affinity
 // }
 
-fn fcc26() -> Interger {
-    usize::MAX;
-}
+// fn fcc26() -> usize { //PURPOSE??? IM LOST??? nevermind, 27 has to do with data types, intro lesson
+//     24 
+// } //fcc26 Done
 
+// #[cfg(test)]
+// mod tests {
+//   use crate::fcc27;
+//   #[test]
+//   #[should_panic] //THIS MAKES THE PROGRAM ERROR OUT? OR SHOULD ERROR OUT? Testing is werid.
+//   fn main_panics_with_i() {
+//     assert_eq!(main() as usize as f32, main() as f32);
+//   }
+//   #[test]
+//   fn main_returns_f() {
+//     assert_eq!(main() as f32, 24.5);
+//   }
+// } //fcc27 DONE
+
+// fn fcc28alt() -> io::Result<()> { //ALRIGHT THIS IS USER INPUT. ERRR How do i make it read at the same time as run?
+//     //Got it, wrong implementation, but i got it.
+//     let mut user_input = String::new();
+//     io::stdin().read_line(&mut user_input)?; // we get Stdin from the user
+//     println!("You entered: {}", user_input);
+//     Ok(())
+// }
+
+fn fcc28(first_number: f32, operator: char, second_number: f32) {
+    println!("Your Input: {} {} {}", first_number, operator, second_number);
+    println!("Calculating");
+    let answer = match operator {
+        '+' => first_number + second_number,
+        '-' => first_number - second_number,
+        '*' => first_number * second_number,
+        '/' => first_number / second_number,
+        _ => panic!("Invalid Operator"),
+    };
+    println!("Result: {} {} {} = {}", first_number, operator, second_number, answer);
+}
