@@ -12,8 +12,11 @@ fn main() {
     let first_number = user_input.next().unwrap().parse::<f32>().unwrap();
     let operator = user_input.next().unwrap().chars().next().unwrap();
     let second_number = user_input.next().unwrap().parse::<f32>().unwrap();
-    fcc28(first_number, operator, second_number);
-    Ok(()); //I dont know what this does, but i think its a code safty thing?
+    println!(
+        "{}",
+        fcc28(first_number, operator, second_number)
+    );
+//I dont know what this does, but i think its a code safty thing?
 } 
 
 // fn first_name() {
@@ -114,9 +117,9 @@ fn main() {
 //     Ok(())
 // }
 
-fn fcc28(first_number: f32, operator: char, second_number: f32) {
-    println!("Your Input: {} {} {}", first_number, operator, second_number);
-    println!("Calculating");
+fn fcc28(first_number: f32, operator: char, second_number: f32) -> String {
+    // println!("Your Input: {} {} {}", first_number, operator, second_number);
+    // println!("Calculating");
     let answer = match operator {
         '+' => first_number + second_number,
         '-' => first_number - second_number,
@@ -124,5 +127,5 @@ fn fcc28(first_number: f32, operator: char, second_number: f32) {
         '/' => first_number / second_number,
         _ => panic!("Invalid Operator"),
     };
-    println!("Result: {} {} {} = {}", first_number, operator, second_number, answer);
+    format!("Result: {} {} {} = {}", first_number, operator, second_number, answer) //fcc29 using this result! funciton, if you want it to return a string you need to not have a semicolon on the end.
 }
