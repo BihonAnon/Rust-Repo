@@ -1,6 +1,14 @@
+#[cfg(test)] //fcc26 (test functions are important guys)
+mod tests {
+    #[test]
+    fn main_exists() {
+      assert_eq!(main(), ());
+    }
+}
+
 fn main() {
     println!("Hello, world!");
-    fcc20();
+    println!("{}", fcc26());
 }
 
 // fn first_name() {
@@ -56,31 +64,26 @@ fn main() {
 //     my_string.push_str(" AndThisIsMore");
 //     println!("{}", my_string); 
 // } //Code Works, thats fcc16 & fcc17 & fcc18 & fcc19
-fn fcc20() {
-    //fcc20 explains that strings can be thought of as collections (arrays) of char (Unicode Scalar Values (USV) ex. [ U+221E = ∞ ])
-    let first = "J"; //fcc20 done
-    println!("focus[{}] .len() {} // .chars().count() {}", first, first.len(), first.chars().count()); //fcc21, but sanity added
-    //fcc22 => The len method returns the length in bytes for the str. The chars method returns an iterator over the chars in the string slice, and the count method returns the number of elements in the iterator.
-    let first = "∞"; //fcc23
-    println!("focus[{}] .len() {} // .chars().count() {}", first, first.len(), first.chars().count()); //fcc23 again, sanity added
+
+// fn fcc20() {
+//     //fcc20 explains that strings can be thought of as collections (arrays) of char (Unicode Scalar Values (USV) ex. [ U+221E = ∞ ])
+//     let first = "J"; //fcc20 done
+//     println!("focus[{}] .len() {} // .chars().count() {}", first, first.len(), first.chars().count()); //fcc21, but sanity added
+//     //fcc22 => The len method returns the length in bytes for the str. The chars method returns an iterator over the chars in the string slice, and the count method returns the number of elements in the iterator.
+//     let first = "∞"; //fcc23
+//     println!("focus[{}] .len() {} // .chars().count() {}", first, first.len(), first.chars().count()); //fcc23 again, sanity added
 
 
-    let mut char_array = String::from(first);
-    char_array.push_str("I  ");
-    println!("{}", first);
-    //Processing.org
-    //Natron
-    //Houdini
-    //affinity
-}
-fn fcc24() {
-    
+//     let mut char_array = String::from(first);
+//     char_array.push_str("I  ");
+//     println!("{}", first);
+//     //Processing.org
+//     //Natron
+//     //Houdini
+//     //affinity
+// }
+
+fn fcc26() -> Interger {
+    usize::MAX;
 }
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn main_exists() {
-      assert_eq!(main(), ());
-    }
-}
