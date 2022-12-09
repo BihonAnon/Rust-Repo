@@ -1,15 +1,14 @@
 fn main() {
     println!("Hello, world!");
-    fcc8();
-    fcc9();
+    fcc13();
 }
 
-// fn first_name() {
-//     //fcc 6
-//     let first_name = "John";
-//     //fcc 7 string concatenation VVV
-//     println!("My name is {}", first_name);
-// }
+fn first_name() {
+    //fcc 6
+    let first_name = "John";
+    //fcc 7 string concatenation VVV
+    println!("My name is {}", first_name);
+}
 fn fcc8() {
     //fcc 8
     /*
@@ -37,5 +36,15 @@ another common type is String, since its heap allocated, it means the size can b
     //fcc10, This some werid engagement. I would call this a poin^er but im pretty confused.
     //NEVER MIND: IF VARIABLE IS MOVED IN MEMORY, YOU CANT ACCESS IT ANYMORE. THIS MAKES SO MUCH SENSE
     println!("{}", name);
-    println!("{}", example);
+    println!("{}", example); //YE(S I GET AN ERROR FCC12
+}
+
+fn fcc13() {
+    let example = String::from("Hello, Campers!");
+    let refrence_name = &example; // << (fcc13) Call as refrence (using &) and the varibale wont be moved in memory, so it can both can be accessed.
+    println!("example : {} refrence : {}", example, refrence_name);
+} //Code Works, thats fcc13 & fcc14
+
+fn fcc15() {
+
 }
