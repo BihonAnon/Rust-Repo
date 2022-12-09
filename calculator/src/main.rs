@@ -120,12 +120,12 @@ fn main() {
 fn fcc28(first_number: f32, operator: char, second_number: f32) -> String {
     // println!("Your Input: {} {} {}", first_number, operator, second_number);
     // println!("Calculating");
-    let answer = match operator {
+    let answer = match operator { //Better way of doing fcc33. Why use [if else] if you can just match. edit: this is fcc35.
         '+' => first_number + second_number,
         '-' => first_number - second_number,
-        '*' => first_number * second_number,
+        '*' | 'x' | 'X'  => first_number * second_number, //fcc 36, 'or' operator
         '/' => first_number / second_number,
-        _ => panic!("Invalid Operator"),
+        _ => panic!("Invalid Operator"), //And this ones fcc34
     };
     format!("Result: {} {} {} = {}", first_number, operator, second_number, answer) //fcc29 using this result! funciton, if you want it to return a string you need to not have a semicolon on the end.
 }
