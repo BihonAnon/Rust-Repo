@@ -23,7 +23,9 @@ fn main() {
         "{}",
         fcc28(first_number, operator, second_number)
     );
+
 //Alright this is getting messy af. Im not going to bother cleaning it up because if you want to see good code, not code from a learner check one of my other repos. this code isnt unsafe or broken, just unoptimized and not pretty.
+//ended fcc43/55 for calc -> Im going to make another calc thats prettier cuz the last comment as i wrote it i got mad.
 } 
 
 // fn first_name() {
